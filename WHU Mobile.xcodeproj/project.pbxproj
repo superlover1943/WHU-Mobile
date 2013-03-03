@@ -16,13 +16,15 @@
 		5EA7EDB916E39F9300FC4CEA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EA7EDB816E39F9300FC4CEA /* Default.png */; };
 		5EA7EDBB16E39F9300FC4CEA /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EA7EDBA16E39F9300FC4CEA /* Default@2x.png */; };
 		5EA7EDBD16E39F9300FC4CEA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EA7EDBC16E39F9300FC4CEA /* Default-568h@2x.png */; };
-		5EA7EDC016E39F9300FC4CEA /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EA7EDBE16E39F9300FC4CEA /* MainStoryboard.storyboard */; };
 		5EA7EDC316E39F9300FC4CEA /* WMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7EDC216E39F9300FC4CEA /* WMViewController.m */; };
 		5EA7EDCB16E39F9300FC4CEA /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA7EDCA16E39F9300FC4CEA /* SenTestingKit.framework */; };
 		5EA7EDCC16E39F9300FC4CEA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA7EDA616E39F9300FC4CEA /* UIKit.framework */; };
 		5EA7EDCD16E39F9300FC4CEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA7EDA816E39F9300FC4CEA /* Foundation.framework */; };
 		5EA7EDD516E39F9300FC4CEA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EA7EDD316E39F9300FC4CEA /* InfoPlist.strings */; };
 		5EA7EDD816E39F9300FC4CEA /* WHU_MobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7EDD716E39F9300FC4CEA /* WHU_MobileTests.m */; };
+		5EA7EDE216E3A04A00FC4CEA /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EA7EDE116E3A04A00FC4CEA /* MainStoryboard.storyboard */; };
+		5EA7EDE516E3A09800FC4CEA /* WHUWLAN.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7EDE416E3A09800FC4CEA /* WHUWLAN.m */; };
+		5EA7EDE916E3A0CB00FC4CEA /* settingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7EDE816E3A0CB00FC4CEA /* settingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +51,6 @@
 		5EA7EDB816E39F9300FC4CEA /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		5EA7EDBA16E39F9300FC4CEA /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		5EA7EDBC16E39F9300FC4CEA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		5EA7EDBF16E39F9300FC4CEA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		5EA7EDC116E39F9300FC4CEA /* WMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WMViewController.h; sourceTree = "<group>"; };
 		5EA7EDC216E39F9300FC4CEA /* WMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WMViewController.m; sourceTree = "<group>"; };
 		5EA7EDC916E39F9300FC4CEA /* WHU MobileTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WHU MobileTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +59,11 @@
 		5EA7EDD416E39F9300FC4CEA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5EA7EDD616E39F9300FC4CEA /* WHU_MobileTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WHU_MobileTests.h; sourceTree = "<group>"; };
 		5EA7EDD716E39F9300FC4CEA /* WHU_MobileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHU_MobileTests.m; sourceTree = "<group>"; };
+		5EA7EDE116E3A04A00FC4CEA /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		5EA7EDE316E3A09800FC4CEA /* WHUWLAN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHUWLAN.h; sourceTree = "<group>"; };
+		5EA7EDE416E3A09800FC4CEA /* WHUWLAN.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHUWLAN.m; sourceTree = "<group>"; };
+		5EA7EDE716E3A0CB00FC4CEA /* settingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = settingsViewController.h; sourceTree = "<group>"; };
+		5EA7EDE816E3A0CB00FC4CEA /* settingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = settingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,11 +123,9 @@
 		5EA7EDAC16E39F9300FC4CEA /* WHU Mobile */ = {
 			isa = PBXGroup;
 			children = (
-				5EA7EDB516E39F9300FC4CEA /* WMAppDelegate.h */,
-				5EA7EDB616E39F9300FC4CEA /* WMAppDelegate.m */,
-				5EA7EDBE16E39F9300FC4CEA /* MainStoryboard.storyboard */,
-				5EA7EDC116E39F9300FC4CEA /* WMViewController.h */,
-				5EA7EDC216E39F9300FC4CEA /* WMViewController.m */,
+				5EA7EDE116E3A04A00FC4CEA /* MainStoryboard.storyboard */,
+				5EA7EDEA16E3A0F200FC4CEA /* ViewController */,
+				5EA7EDE616E3A0A500FC4CEA /* Model */,
 				5EA7EDAD16E39F9300FC4CEA /* Supporting Files */,
 			);
 			path = "WHU Mobile";
@@ -130,6 +134,8 @@
 		5EA7EDAD16E39F9300FC4CEA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5EA7EDB516E39F9300FC4CEA /* WMAppDelegate.h */,
+				5EA7EDB616E39F9300FC4CEA /* WMAppDelegate.m */,
 				5EA7EDAE16E39F9300FC4CEA /* WHU Mobile-Info.plist */,
 				5EA7EDAF16E39F9300FC4CEA /* InfoPlist.strings */,
 				5EA7EDB216E39F9300FC4CEA /* main.m */,
@@ -158,6 +164,26 @@
 				5EA7EDD316E39F9300FC4CEA /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5EA7EDE616E3A0A500FC4CEA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5EA7EDE316E3A09800FC4CEA /* WHUWLAN.h */,
+				5EA7EDE416E3A09800FC4CEA /* WHUWLAN.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		5EA7EDEA16E3A0F200FC4CEA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5EA7EDC116E39F9300FC4CEA /* WMViewController.h */,
+				5EA7EDC216E39F9300FC4CEA /* WMViewController.m */,
+				5EA7EDE716E3A0CB00FC4CEA /* settingsViewController.h */,
+				5EA7EDE816E3A0CB00FC4CEA /* settingsViewController.m */,
+			);
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,7 +262,7 @@
 				5EA7EDB916E39F9300FC4CEA /* Default.png in Resources */,
 				5EA7EDBB16E39F9300FC4CEA /* Default@2x.png in Resources */,
 				5EA7EDBD16E39F9300FC4CEA /* Default-568h@2x.png in Resources */,
-				5EA7EDC016E39F9300FC4CEA /* MainStoryboard.storyboard in Resources */,
+				5EA7EDE216E3A04A00FC4CEA /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +300,7 @@
 				5EA7EDB316E39F9300FC4CEA /* main.m in Sources */,
 				5EA7EDB716E39F9300FC4CEA /* WMAppDelegate.m in Sources */,
 				5EA7EDC316E39F9300FC4CEA /* WMViewController.m in Sources */,
+				5EA7EDE916E3A0CB00FC4CEA /* settingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EA7EDD816E39F9300FC4CEA /* WHU_MobileTests.m in Sources */,
+				5EA7EDE516E3A09800FC4CEA /* WHUWLAN.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,14 +330,6 @@
 				5EA7EDB016E39F9300FC4CEA /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		5EA7EDBE16E39F9300FC4CEA /* MainStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5EA7EDBF16E39F9300FC4CEA /* en */,
-			);
-			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 		5EA7EDD316E39F9300FC4CEA /* InfoPlist.strings */ = {

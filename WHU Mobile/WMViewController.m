@@ -7,23 +7,45 @@
 //
 
 #import "WMViewController.h"
+#import "WHUWLAN.h"
 
-@interface WMViewController ()
-
+@interface WMViewController ()<NSURLConnectionDelegate,WHUWLANDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *resultLabel;
+@property (nonatomic,strong) WHUWLAN *whuWLAN;
 @end
 
 @implementation WMViewController
 
+- (void)handleWLANLoginResponse:(NSString *)response
+{
+    
+}
+
+- (WHUWLAN *)whuWLAN{
+    if (!_whuWLAN) {
+        _whuWLAN = [[WHUWLAN alloc] initWithDelegate:self];
+    }
+    return _whuWLAN;
+}
+- (IBAction)login:(UIButton *)sender
+{
+    if (sender.isSelected)
+    {
+        [self.whuWLAN logOff];
+    }
+    else
+    {
+        NSUserDefaults *userDefaultes = [NSUserDefaults standardUserDefaults];
+        NSString *username = [userDefaultes stringForKey:@"myWLANUsername"];
+        NSString *password = [userDefaultes stringForKey:@"myWLANPassword"];
+        [self.whuWLAN loginUsingUsername:username
+                             andPassword:password];
+    }
+}
+
 - (void)viewDidLoad
 {
+    [self.whuWLAN checkWhetherLogged];
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-@end
+    
+}@end

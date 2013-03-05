@@ -12,7 +12,7 @@ build/
 *.xcworkspace
 !default.xcworkspace
 xcuserdata
-profile
+WHU Mobile.xcodeproj/project.xcworkspace/xcuserdata/
 *.moved-aside
 DerivedData
 .idea/

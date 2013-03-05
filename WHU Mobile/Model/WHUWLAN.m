@@ -30,12 +30,15 @@
 - (void)loginUsingUsername:(NSString *)username
                andPassword:(NSString *)password
 {
-
-    self.username = username;
-    self.password = password;
-    self.checkThenLogin = YES;
-    [self.connectionQueue cancelAllOperations];
-    [self checkWhetherLogged];
+    if ([username length] && [password length]) {
+        self.username = username;
+        self.password = password;
+        self.checkThenLogin = YES;
+        [self.connectionQueue cancelAllOperations];
+        [self checkWhetherLogged];
+    }
+    else
+        [self.delegate handleWLANLoginResponse:@"用户名或密码为空"];
 }
 
 - (void)login
@@ -113,14 +116,17 @@
     NSLog(@"%@",error.description);
     //mark
     NSString *errorDescription = [NSString stringWithFormat:@"%@",error.description];
-    NSRange errorRange = [errorDescription rangeOfString:@"Timeout"];
-    if (errorRange.location != NSNotFound) {
+    NSRange timeoutRange = [errorDescription rangeOfString:@"timed out"];
+    NSRange noConnectionRange = [errorDescription rangeOfString:@"offline"];
+    if (timeoutRange.location != NSNotFound)
         [self.delegate handleWLANLoginResponse:@"连接超时"];
-    }
+    else if (noConnectionRange.location != NSNotFound)
+        [self.delegate handleWLANLoginResponse:@"无网络"];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     NSString *htmlContent = [[NSString alloc] initWithData:self.responseData encoding:NSUTF8StringEncoding];
+    NSLog(@"%@",htmlContent);
     if (connection == self.loginConnection)
     {
         self.loginConnection = nil;
@@ -132,33 +138,21 @@
         NSRange conflictRange = [htmlContent rangeOfString:@"帐号已在线"];
         NSRange outOfService = [htmlContent rangeOfString:@"包天暂停"];
         if (successRange.location != NSNotFound)
-        {
             [self.delegate handleWLANLoginResponse:@"连接成功"];
-        }
         else if (wrongPasswordRange.location != NSNotFound)
-        {
             [self.delegate handleWLANLoginResponse:@"密码错误"];
-        }
         else if (invalidUsernameRange.location != NSNotFound)
-        {
             [self.delegate handleWLANLoginResponse:@"用户名不存在"];
-        }
         else if (busyRange.location != NSNotFound)
-        {
             [self.delegate handleWLANLoginResponse:@"系统繁忙"];
-        }
         else if (wificonflictRange.location != NSNotFound)
-        {
             [self.delegate handleWLANLoginResponse:@"同名用户已连接WLAN"];
-        }
         else if (conflictRange.location != NSNotFound)
-        {
             [self.delegate handleWLANLoginResponse:@"同名用户已连接校园网"];
-        }
         else if (outOfService.location != NSNotFound)
-        {
             [self.delegate handleWLANLoginResponse:@"用户已停止校园网包天"];
-        }
+        else
+            [self.delegate handleWLANLoginResponse:@"连接失败"];
     }
     else if (connection == self.logoffConnection)
     {
@@ -266,6 +260,7 @@
 
 - (NSString *)fetchSSIDInfo
 {
+    /*
     CFArrayRef arrayRef = CNCopySupportedInterfaces();
     NSArray *interfaces = (__bridge NSArray *)arrayRef;
     NSLog(@"interfaces -> %@", interfaces);
@@ -287,6 +282,8 @@
         if(myDict!=nil)currentSSID=CFDictionaryGetValue(myDict, @"SSID");
     } else currentSSID=@"";
     return CFBridgingRelease(currentSSID);
+     */
+    return @"WHU-WLAN";
 }
 
 - (id)initWithDelegate:(id)delegate

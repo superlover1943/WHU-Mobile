@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E48467016E4AE39002D8F96 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E48466F16E4AE39002D8F96 /* SystemConfiguration.framework */; };
+		5E48468816E63A34002D8F96 /* WHUWLAN.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E48468716E63A34002D8F96 /* WHUWLAN.m */; };
 		5EA7EDA716E39F9300FC4CEA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA7EDA616E39F9300FC4CEA /* UIKit.framework */; };
 		5EA7EDA916E39F9300FC4CEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA7EDA816E39F9300FC4CEA /* Foundation.framework */; };
 		5EA7EDAB16E39F9300FC4CEA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA7EDAA16E39F9300FC4CEA /* CoreGraphics.framework */; };
@@ -23,7 +25,6 @@
 		5EA7EDD516E39F9300FC4CEA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EA7EDD316E39F9300FC4CEA /* InfoPlist.strings */; };
 		5EA7EDD816E39F9300FC4CEA /* WHU_MobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7EDD716E39F9300FC4CEA /* WHU_MobileTests.m */; };
 		5EA7EDE216E3A04A00FC4CEA /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EA7EDE116E3A04A00FC4CEA /* MainStoryboard.storyboard */; };
-		5EA7EDE516E3A09800FC4CEA /* WHUWLAN.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7EDE416E3A09800FC4CEA /* WHUWLAN.m */; };
 		5EA7EDE916E3A0CB00FC4CEA /* settingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7EDE816E3A0CB00FC4CEA /* settingsViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E48466F16E4AE39002D8F96 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5E48468616E63A34002D8F96 /* WHUWLAN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WHUWLAN.h; path = Model/WHUWLAN.h; sourceTree = "<group>"; };
+		5E48468716E63A34002D8F96 /* WHUWLAN.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WHUWLAN.m; path = Model/WHUWLAN.m; sourceTree = "<group>"; };
 		5EA7EDA216E39F9300FC4CEA /* WHU Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WHU Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EA7EDA616E39F9300FC4CEA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5EA7EDA816E39F9300FC4CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -60,8 +64,6 @@
 		5EA7EDD616E39F9300FC4CEA /* WHU_MobileTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WHU_MobileTests.h; sourceTree = "<group>"; };
 		5EA7EDD716E39F9300FC4CEA /* WHU_MobileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHU_MobileTests.m; sourceTree = "<group>"; };
 		5EA7EDE116E3A04A00FC4CEA /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
-		5EA7EDE316E3A09800FC4CEA /* WHUWLAN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHUWLAN.h; sourceTree = "<group>"; };
-		5EA7EDE416E3A09800FC4CEA /* WHUWLAN.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHUWLAN.m; sourceTree = "<group>"; };
 		5EA7EDE716E3A0CB00FC4CEA /* settingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = settingsViewController.h; sourceTree = "<group>"; };
 		5EA7EDE816E3A0CB00FC4CEA /* settingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = settingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E48467016E4AE39002D8F96 /* SystemConfiguration.framework in Frameworks */,
 				5EA7EDA716E39F9300FC4CEA /* UIKit.framework in Frameworks */,
 				5EA7EDA916E39F9300FC4CEA /* Foundation.framework in Frameworks */,
 				5EA7EDAB16E39F9300FC4CEA /* CoreGraphics.framework in Frameworks */,
@@ -112,6 +115,7 @@
 		5EA7EDA516E39F9300FC4CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5E48466F16E4AE39002D8F96 /* SystemConfiguration.framework */,
 				5EA7EDA616E39F9300FC4CEA /* UIKit.framework */,
 				5EA7EDA816E39F9300FC4CEA /* Foundation.framework */,
 				5EA7EDAA16E39F9300FC4CEA /* CoreGraphics.framework */,
@@ -169,8 +173,8 @@
 		5EA7EDE616E3A0A500FC4CEA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5EA7EDE316E3A09800FC4CEA /* WHUWLAN.h */,
-				5EA7EDE416E3A09800FC4CEA /* WHUWLAN.m */,
+				5E48468616E63A34002D8F96 /* WHUWLAN.h */,
+				5E48468716E63A34002D8F96 /* WHUWLAN.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -301,6 +305,7 @@
 				5EA7EDB716E39F9300FC4CEA /* WMAppDelegate.m in Sources */,
 				5EA7EDC316E39F9300FC4CEA /* WMViewController.m in Sources */,
 				5EA7EDE916E3A0CB00FC4CEA /* settingsViewController.m in Sources */,
+				5E48468816E63A34002D8F96 /* WHUWLAN.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,7 +314,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EA7EDD816E39F9300FC4CEA /* WHU_MobileTests.m in Sources */,
-				5EA7EDE516E3A09800FC4CEA /* WHUWLAN.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +402,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WHU Mobile/WHU Mobile-Prefix.pch";
 				INFOPLIST_FILE = "WHU Mobile/WHU Mobile-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -409,6 +414,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WHU Mobile/WHU Mobile-Prefix.pch";
 				INFOPLIST_FILE = "WHU Mobile/WHU Mobile-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -467,6 +473,7 @@
 				5EA7EDDD16E39F9300FC4CEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5EA7EDDE16E39F9300FC4CEA /* Build configuration list for PBXNativeTarget "WHU MobileTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +482,7 @@
 				5EA7EDE016E39F9300FC4CEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

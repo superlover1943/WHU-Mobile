@@ -16,9 +16,11 @@
 
 @implementation WMViewController
 
+
+
 - (void)handleWLANLoginResponse:(NSString *)response
 {
-    
+    NSLog(@"%@",response);
 }
 
 - (WHUWLAN *)whuWLAN{
@@ -38,8 +40,11 @@
         NSUserDefaults *userDefaultes = [NSUserDefaults standardUserDefaults];
         NSString *username = [userDefaultes stringForKey:@"myWLANUsername"];
         NSString *password = [userDefaultes stringForKey:@"myWLANPassword"];
-        [self.whuWLAN loginUsingUsername:username
-                             andPassword:password];
+        if (username && password)
+            [self.whuWLAN loginUsingUsername:username
+                                 andPassword:password];
+        else
+            [self performSegueWithIdentifier:@"settings" sender:self];
     }
 }
 

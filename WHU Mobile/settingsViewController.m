@@ -8,64 +8,83 @@
 
 #import "settingsViewController.h"
 
-@interface settingsViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *usernameField;
-@property (weak, nonatomic) IBOutlet UITextField *passwordField;
+@interface settingsViewController ()<UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *myTableView;
+@property (nonatomic,strong)NSString *username;
+@property (nonatomic,strong)NSString *password;
 
 @end
 
 @implementation settingsViewController
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {return 1;}
+
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section {return 2;}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = nil;
+    if (indexPath.row == 0)
+    {
+        cell = [self.myTableView dequeueReusableCellWithIdentifier:@"username"];
+    }
+    else if (indexPath.row == 1)
+    {
+        cell = [self.myTableView dequeueReusableCellWithIdentifier:@"password"];
+    }
+    return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView
+titleForFooterInSection:(NSInteger)section {return @"用户名和密码会自动保存，若想清除数据，清空用户名一栏即可";}
+
 - (IBAction)closeSettingView:(id)sender
 {
-    NSString *username = self.usernameField.text;
-    if (username.length == 0)
-    {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"错误"
-                                                            message:@"用户名不能为空！"
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"确定"
-                                                  otherButtonTitles:nil];
-        [alertView show];
-        return;
-    }
-    
-    NSString *password = self.passwordField.text;
-    if (password.length == 0)
-    {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"错误"
-                                                            message:@"密码不能为空！"
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"确定"
-                                                  otherButtonTitles:nil];
-        [alertView show];
-        return;
-    }
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setObject:(1 ? username:@"") forKey:@"myWLANUsername"];
-    [userDefaults setObject:(1 ? password:@"") forKey:@"myWLANPassword"];
+    [userDefaults setObject:self.username forKey:@"myWLANUsername"];
+    [userDefaults setObject:(self.username? self.password:@"") forKey:@"myWLANPassword"];
     [userDefaults synchronize];
     [self dismissViewControllerAnimated:YES completion:^{}];
 }
 
 - (IBAction)closeDoneEdit:(id)sender
 {
-    [sender resignFirstResponder];
+    [self closeSettingView:sender];
 }
 
+/*
 - (IBAction)dismissKeyboard:(id)sender;
 {
     [self.usernameField resignFirstResponder];
     [self.passwordField resignFirstResponder];
 }
+*/
 
-- (void)viewWillAppear:(BOOL)animated
+
+- (void)setup
 {
-    [super viewWillAppear:animated];
     NSUserDefaults *userDefaultes = [NSUserDefaults standardUserDefaults];
     NSString *myUsername = [userDefaultes stringForKey:@"myWLANUsername"];
-    self.usernameField.text = myUsername;
+    self.username = myUsername;
     NSString *myPassword = [userDefaultes stringForKey:@"myWLANPassword"];
-    self.passwordField.text = myPassword;
+    self.password = myPassword;
+}
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    [self setup];
+}
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        [self setup];
+    }
+    return self;
 }
 
 @end

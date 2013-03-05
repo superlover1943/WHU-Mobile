@@ -23,7 +23,7 @@
 - (void)logOff;
 - (void)checkWhetherLogged;
 
-//Designed initializer. DO NOT USE init!
+//Designed initializer.
 - (id)initWithDelegate:(id)delegate;
 
 @end

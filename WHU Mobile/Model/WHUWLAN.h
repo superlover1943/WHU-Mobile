@@ -1,6 +1,6 @@
 //
 //  WHUWLAN.h
-//  testProject
+//  WHU Mobile
 //
 //  Created by 黄 嘉恒 on 2/26/13.
 //  Copyright (c) 2013 黄 嘉恒. All rights reserved.
@@ -11,6 +11,7 @@
 @protocol WHUWLANDelegate <NSObject>
 
 - (void)handleWLANLoginResponse:(NSString *)response;
+- (void)handleWLANLoginError:(NSError *)error;
 
 @end
 

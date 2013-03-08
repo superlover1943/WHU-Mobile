@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5E48467016E4AE39002D8F96 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E48466F16E4AE39002D8F96 /* SystemConfiguration.framework */; };
 		5E48468816E63A34002D8F96 /* WHUWLAN.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E48468716E63A34002D8F96 /* WHUWLAN.m */; };
+		5E4A5CB916EA2DDA00A41E1A /* wrench.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E4A5CB816EA2DDA00A41E1A /* wrench.png */; };
+		5EA6409416EA0554006EBFE8 /* StringInputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA6409316EA0554006EBFE8 /* StringInputTableViewCell.m */; };
 		5EA7EDA716E39F9300FC4CEA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA7EDA616E39F9300FC4CEA /* UIKit.framework */; };
 		5EA7EDA916E39F9300FC4CEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA7EDA816E39F9300FC4CEA /* Foundation.framework */; };
 		5EA7EDAB16E39F9300FC4CEA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA7EDAA16E39F9300FC4CEA /* CoreGraphics.framework */; };
@@ -19,7 +21,6 @@
 		5EA7EDBB16E39F9300FC4CEA /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EA7EDBA16E39F9300FC4CEA /* Default@2x.png */; };
 		5EA7EDBD16E39F9300FC4CEA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EA7EDBC16E39F9300FC4CEA /* Default-568h@2x.png */; };
 		5EA7EDC316E39F9300FC4CEA /* WMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7EDC216E39F9300FC4CEA /* WMViewController.m */; };
-		5EA7EDCB16E39F9300FC4CEA /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA7EDCA16E39F9300FC4CEA /* SenTestingKit.framework */; };
 		5EA7EDCC16E39F9300FC4CEA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA7EDA616E39F9300FC4CEA /* UIKit.framework */; };
 		5EA7EDCD16E39F9300FC4CEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA7EDA816E39F9300FC4CEA /* Foundation.framework */; };
 		5EA7EDD516E39F9300FC4CEA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EA7EDD316E39F9300FC4CEA /* InfoPlist.strings */; };
@@ -42,6 +43,9 @@
 		5E48466F16E4AE39002D8F96 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5E48468616E63A34002D8F96 /* WHUWLAN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WHUWLAN.h; path = Model/WHUWLAN.h; sourceTree = "<group>"; };
 		5E48468716E63A34002D8F96 /* WHUWLAN.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WHUWLAN.m; path = Model/WHUWLAN.m; sourceTree = "<group>"; };
+		5E4A5CB816EA2DDA00A41E1A /* wrench.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wrench.png; sourceTree = "<group>"; };
+		5EA6409216EA0554006EBFE8 /* StringInputTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringInputTableViewCell.h; sourceTree = "<group>"; };
+		5EA6409316EA0554006EBFE8 /* StringInputTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringInputTableViewCell.m; sourceTree = "<group>"; };
 		5EA7EDA216E39F9300FC4CEA /* WHU Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WHU Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EA7EDA616E39F9300FC4CEA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5EA7EDA816E39F9300FC4CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -58,7 +62,6 @@
 		5EA7EDC116E39F9300FC4CEA /* WMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WMViewController.h; sourceTree = "<group>"; };
 		5EA7EDC216E39F9300FC4CEA /* WMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WMViewController.m; sourceTree = "<group>"; };
 		5EA7EDC916E39F9300FC4CEA /* WHU MobileTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WHU MobileTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5EA7EDCA16E39F9300FC4CEA /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		5EA7EDD216E39F9300FC4CEA /* WHU MobileTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WHU MobileTests-Info.plist"; sourceTree = "<group>"; };
 		5EA7EDD416E39F9300FC4CEA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5EA7EDD616E39F9300FC4CEA /* WHU_MobileTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WHU_MobileTests.h; sourceTree = "<group>"; };
@@ -84,7 +87,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EA7EDCB16E39F9300FC4CEA /* SenTestingKit.framework in Frameworks */,
 				5EA7EDCC16E39F9300FC4CEA /* UIKit.framework in Frameworks */,
 				5EA7EDCD16E39F9300FC4CEA /* Foundation.framework in Frameworks */,
 			);
@@ -119,7 +121,6 @@
 				5EA7EDA616E39F9300FC4CEA /* UIKit.framework */,
 				5EA7EDA816E39F9300FC4CEA /* Foundation.framework */,
 				5EA7EDAA16E39F9300FC4CEA /* CoreGraphics.framework */,
-				5EA7EDCA16E39F9300FC4CEA /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -138,6 +139,7 @@
 		5EA7EDAD16E39F9300FC4CEA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5E4A5CB816EA2DDA00A41E1A /* wrench.png */,
 				5EA7EDB516E39F9300FC4CEA /* WMAppDelegate.h */,
 				5EA7EDB616E39F9300FC4CEA /* WMAppDelegate.m */,
 				5EA7EDAE16E39F9300FC4CEA /* WHU Mobile-Info.plist */,
@@ -173,6 +175,8 @@
 		5EA7EDE616E3A0A500FC4CEA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5EA6409216EA0554006EBFE8 /* StringInputTableViewCell.h */,
+				5EA6409316EA0554006EBFE8 /* StringInputTableViewCell.m */,
 				5E48468616E63A34002D8F96 /* WHUWLAN.h */,
 				5E48468716E63A34002D8F96 /* WHUWLAN.m */,
 			);
@@ -267,6 +271,7 @@
 				5EA7EDBB16E39F9300FC4CEA /* Default@2x.png in Resources */,
 				5EA7EDBD16E39F9300FC4CEA /* Default-568h@2x.png in Resources */,
 				5EA7EDE216E3A04A00FC4CEA /* MainStoryboard.storyboard in Resources */,
+				5E4A5CB916EA2DDA00A41E1A /* wrench.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +311,7 @@
 				5EA7EDC316E39F9300FC4CEA /* WMViewController.m in Sources */,
 				5EA7EDE916E3A0CB00FC4CEA /* settingsViewController.m in Sources */,
 				5E48468816E63A34002D8F96 /* WHUWLAN.m in Sources */,
+				5EA6409416EA0554006EBFE8 /* StringInputTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

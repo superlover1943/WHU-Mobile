@@ -1,6 +1,6 @@
 //
 //  WHUWLAN.m
-//  testProject
+//  WHU Mobile
 //
 //  Created by 黄 嘉恒 on 2/26/13.
 //  Copyright (c) 2013 黄 嘉恒. All rights reserved.
@@ -113,20 +113,11 @@
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-    NSLog(@"%@",error.description);
-    //mark
-    NSString *errorDescription = [NSString stringWithFormat:@"%@",error.description];
-    NSRange timeoutRange = [errorDescription rangeOfString:@"timed out"];
-    NSRange noConnectionRange = [errorDescription rangeOfString:@"offline"];
-    if (timeoutRange.location != NSNotFound)
-        [self.delegate handleWLANLoginResponse:@"连接超时"];
-    else if (noConnectionRange.location != NSNotFound)
-        [self.delegate handleWLANLoginResponse:@"无网络"];
+    [self.delegate handleWLANLoginError:error];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     NSString *htmlContent = [[NSString alloc] initWithData:self.responseData encoding:NSUTF8StringEncoding];
-    NSLog(@"%@",htmlContent);
     if (connection == self.loginConnection)
     {
         self.loginConnection = nil;

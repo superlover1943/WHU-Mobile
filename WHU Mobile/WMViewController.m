@@ -16,11 +16,21 @@
 
 @implementation WMViewController
 
-
+- (void)handleWLANLoginError:(NSError *)error
+{
+    if ([error.domain isEqual:NSURLErrorDomain]) {
+        if (error.code == -1001)
+            self.resultLabel.text = @"连接超时";
+        else if (error.code == -1009)
+            self.resultLabel.text = @"无网络";
+        else
+            self.resultLabel.text = @"未知错误";
+    }
+}
 
 - (void)handleWLANLoginResponse:(NSString *)response
 {
-    NSLog(@"%@",response);
+    self.resultLabel.text = response;
 }
 
 - (WHUWLAN *)whuWLAN{
@@ -40,11 +50,11 @@
         NSUserDefaults *userDefaultes = [NSUserDefaults standardUserDefaults];
         NSString *username = [userDefaultes stringForKey:@"myWLANUsername"];
         NSString *password = [userDefaultes stringForKey:@"myWLANPassword"];
-        if (username && password)
+        if ([username isEqualToString:@""] || [password isEqualToString:@""])
+            [self performSegueWithIdentifier:@"settings" sender:self];
+        else
             [self.whuWLAN loginUsingUsername:username
                                  andPassword:password];
-        else
-            [self performSegueWithIdentifier:@"settings" sender:self];
     }
 }
 

@@ -119,23 +119,6 @@
     <resources>
         <image name="wrench.png" width="64" height="64"/>
     </resources>
-    <classes>
-        <class className="WMViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WMViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="login:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="resultLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="settingsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/settingsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="closeSettingView:"/>
-                <relationship kind="action" name="finishEditing:" candidateClass="UITapGestureRecognizer"/>
-                <relationship kind="outlet" name="myTableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

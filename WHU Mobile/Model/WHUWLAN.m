@@ -265,16 +265,17 @@
         }
     }
     CFRelease(arrayRef);
-    
+     */
     CFArrayRef myArray = CNCopySupportedInterfaces();
-    const void* currentSSID;
+    const void* currentSSID = nil;
     if(myArray!=nil){
         CFDictionaryRef myDict = CNCopyCurrentNetworkInfo(CFArrayGetValueAtIndex(myArray, 0));
-        if(myDict!=nil)currentSSID=CFDictionaryGetValue(myDict, @"SSID");
-    } else currentSSID=@"";
+        if(myDict!=nil)
+            currentSSID = CFDictionaryGetValue(myDict, @"SSID");
+    }
+    else
+        currentSSID=@"";
     return CFBridgingRelease(currentSSID);
-     */
-    return @"WHU-WLAN";
 }
 
 - (id)initWithDelegate:(id)delegate

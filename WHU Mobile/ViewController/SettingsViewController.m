@@ -9,6 +9,9 @@
 #import "SettingsViewController.h"
 #import "StringInputTableViewCell.h"
 
+#define USERNAMECELL_TAG 100
+#define PASSWORDCELL_TAG 200
+
 @interface SettingsViewController ()<UITableViewDataSource,StringInputTableViewCellDelegate,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
 @property (nonatomic,strong)NSString *username;
@@ -20,7 +23,7 @@
 
 - (void)tableViewCell:(StringInputTableViewCell *)cell didEndEditingWithString:(NSString *)value
 {
-    if (cell.tag == 100)
+    if (cell.tag == USERNAMECELL_TAG)
     {
         self.username = value;
         if ([value isEqualToString:@""]) {
@@ -29,13 +32,13 @@
                                                                                                     inSection:0]]).stringValue = @"";
         }
     }
-    else if (cell.tag == 200)
+    else if (cell.tag == PASSWORDCELL_TAG)
         self.password = value;
 }
 
 - (void)tableViewCellDidClear:(StringInputTableViewCell *)cell
 {
-    if (cell.tag == 100) {
+    if (cell.tag == USERNAMECELL_TAG) {
         ((StringInputTableViewCell *)[self.myTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1
                                                                                                 inSection:0]]).stringValue = @"";
     }
@@ -62,7 +65,7 @@
         {
             SICell = [[StringInputTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:nil];
             SICell.textLabel.text = @"账号：";
-            SICell.tag = 100;
+            SICell.tag = USERNAMECELL_TAG;
             SICell.delegate = self;
             SICell.stringValue = self.username;
             SICell.textField.placeholder = @"Student Number";
@@ -74,7 +77,7 @@
         {
             SICell = [[StringInputTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:nil];
             SICell.textLabel.text = @"密码：";
-            SICell.tag = 200;
+            SICell.tag = PASSWORDCELL_TAG;
             SICell.delegate = self;
             SICell.stringValue = self.password;
             SICell.textField.placeholder = @"Password";
@@ -135,6 +138,9 @@ shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath
 
 - (IBAction)closeSettingView:(id)sender
 {
+    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
+    UIView *firstResponder = [keyWindow performSelector:@selector(firstResponder)];
+    [firstResponder resignFirstResponder];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:self.username forKey:@"myWLANUsername"];
     [userDefaults setObject:(self.username? self.password:@"") forKey:@"myWLANPassword"];

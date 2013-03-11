@@ -95,6 +95,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E4A5CC116EE1D1C00A41E1A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5EA6409216EA0554006EBFE8 /* StringInputTableViewCell.h */,
+				5EA6409316EA0554006EBFE8 /* StringInputTableViewCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		5EA7ED9716E39F9300FC4CEA = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				5EA7EDE116E3A04A00FC4CEA /* MainStoryboard.storyboard */,
+				5E4A5CC116EE1D1C00A41E1A /* View */,
 				5EA7EDEA16E3A0F200FC4CEA /* ViewController */,
 				5EA7EDE616E3A0A500FC4CEA /* Model */,
 				5EA7EDAD16E39F9300FC4CEA /* Supporting Files */,
@@ -175,8 +185,6 @@
 		5EA7EDE616E3A0A500FC4CEA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5EA6409216EA0554006EBFE8 /* StringInputTableViewCell.h */,
-				5EA6409316EA0554006EBFE8 /* StringInputTableViewCell.m */,
 				5E48468616E63A34002D8F96 /* WHUWLAN.h */,
 				5E48468716E63A34002D8F96 /* WHUWLAN.m */,
 			);

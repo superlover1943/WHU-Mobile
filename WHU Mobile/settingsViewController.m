@@ -81,7 +81,10 @@
             SICell.textField.secureTextEntry = YES;
             SICell.textField.returnKeyType = UIReturnKeyDone;
             SICell.textField.clearButtonMode = UITextFieldViewModeWhileEditing;
-            SICell.textField.clearsOnInsertion = YES;
+            if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 6.0)
+            {
+                SICell.textField.clearsOnInsertion = YES;
+            }
         }
         cell = SICell;
     }

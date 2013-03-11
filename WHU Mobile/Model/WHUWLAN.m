@@ -13,16 +13,18 @@
 #import <sys/socket.h>
 
 @interface WHUWLAN ()
-@property (nonatomic,strong)NSMutableData *responseData;
 @property (nonatomic,strong)NSURLConnection *loginConnection;
 @property (nonatomic,strong)NSURLConnection *logoffConnection;
 @property (nonatomic,strong)NSURLConnection *getCookieConnection;
 @property (nonatomic,strong)NSURLConnection *checkWhetherLoggedConnection;
 @property (nonatomic)BOOL checkThenLogin;
-@property (nonatomic,strong)NSHTTPURLResponse *response;
 @property (nonatomic,strong)NSOperationQueue *connectionQueue;
 @property (nonatomic,strong)NSString *username;
 @property (nonatomic,strong)NSString *password;
+/*
+@property (nonatomic,strong)NSMutableData *responseData;
+@property (nonatomic,strong)NSHTTPURLResponse *response;
+ */
 @end
 
 @implementation WHUWLAN
@@ -103,19 +105,80 @@
     [self.delegate handleWLANLoginResponse:@"正在登出"];
 }
 
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-    self.response = (NSHTTPURLResponse *)response;
-    self.responseData = [[NSMutableData alloc] init];
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    [self.responseData appendData:data];
+- (void)connection:(NSURLConnection *)connection
+    didReceiveData:(NSData *)data
+{
+    NSString *htmlContent = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    if (connection == self.loginConnection)
+    {
+        self.loginConnection = nil;
+        NSRange successRange = [htmlContent rangeOfString:@"欢迎你"];
+        NSRange wrongPasswordRange = [htmlContent rangeOfString:@"密码不正确"];
+        NSRange invalidUsernameRange = [htmlContent rangeOfString:@"不存在"];
+        NSRange busyRange = [htmlContent rangeOfString:@"系统繁忙"];
+        NSRange wificonflictRange = [htmlContent rangeOfString:@"同名无线用户已在线"];
+        NSRange conflictRange = [htmlContent rangeOfString:@"帐号已在线"];
+        NSRange outOfService = [htmlContent rangeOfString:@"包天暂停"];
+        if (successRange.location != NSNotFound)
+            [self.delegate handleWLANLoginResponse:@"连接成功"];
+        else if (wrongPasswordRange.location != NSNotFound)
+            [self.delegate handleWLANLoginResponse:@"密码错误"];
+        else if (invalidUsernameRange.location != NSNotFound)
+            [self.delegate handleWLANLoginResponse:@"用户名不存在"];
+        else if (busyRange.location != NSNotFound)
+            [self.delegate handleWLANLoginResponse:@"系统繁忙"];
+        else if (wificonflictRange.location != NSNotFound)
+            [self.delegate handleWLANLoginResponse:@"同名用户已连接WLAN"];
+        else if (conflictRange.location != NSNotFound)
+            [self.delegate handleWLANLoginResponse:@"同名用户已连接校园网"];
+        else if (outOfService.location != NSNotFound)
+            [self.delegate handleWLANLoginResponse:@"用户已停止校园网包天"];
+        else
+            [self.delegate handleWLANLoginResponse:@"连接失败"];
+    }
+    else if (connection == self.logoffConnection)
+    {
+        [self.delegate handleWLANLoginResponse:@"已登出"];
+        self.logoffConnection = nil;
+    }
+    else if (connection == self.getCookieConnection)
+    {
+        self.getCookieConnection = nil;
+        [self login];
+    }
+    else if (connection == self.checkWhetherLoggedConnection)
+    {
+        self.checkWhetherLoggedConnection = nil;
+        NSRange successRange = [htmlContent rangeOfString:@"欢迎你"];
+        if (successRange.location == NSNotFound)
+            if (self.checkThenLogin)
+            {
+                self.checkThenLogin = NO;
+                [self loadCookie];
+            }
+            else
+                [self.delegate handleWLANLoginResponse:@"未连接"];
+            else
+            {
+                [self.delegate handleWLANLoginResponse:@"已连接"];
+            }
+    }
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     [self.delegate handleWLANLoginError:error];
 }
 
+/*
+ - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+ self.response = (NSHTTPURLResponse *)response;
+ self.responseData = [[NSMutableData alloc] init];
+ }
+ 
+ - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+ [self.responseData appendData:data];
+ }
+ 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     NSString *htmlContent = [[NSString alloc] initWithData:self.responseData encoding:NSUTF8StringEncoding];
     if (connection == self.loginConnection)
@@ -173,7 +236,8 @@
         }
     }
 }
-
+*/
+ 
 /*
  登陆时可能的返回值：
  系统繁忙，请稍后再试。。

@@ -50,7 +50,7 @@
         NSUserDefaults *userDefaultes = [NSUserDefaults standardUserDefaults];
         NSString *username = [userDefaultes stringForKey:@"myWLANUsername"];
         NSString *password = [userDefaultes stringForKey:@"myWLANPassword"];
-        if ([username isEqualToString:@""] || [password isEqualToString:@""])
+        if ([username isEqualToString:@""] || [password isEqualToString:@""] || username == nil)
             [self performSegueWithIdentifier:@"settings" sender:self];
         else
             [self.whuWLAN loginUsingUsername:username

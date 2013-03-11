@@ -15,7 +15,7 @@
 
 @end
 
-@interface WHUWLAN : NSObject <NSURLConnectionDelegate>
+@interface WHUWLAN : NSObject <NSURLConnectionDelegate,NSURLConnectionDataDelegate>
 @property (nonatomic)id<WHUWLANDelegate> delegate;
 
 - (void)loginUsingUsername:(NSString *)username

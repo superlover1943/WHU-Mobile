@@ -10,6 +10,7 @@
 		5E48467016E4AE39002D8F96 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E48466F16E4AE39002D8F96 /* SystemConfiguration.framework */; };
 		5E48468816E63A34002D8F96 /* WHUWLAN.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E48468716E63A34002D8F96 /* WHUWLAN.m */; };
 		5E4A5CB916EA2DDA00A41E1A /* wrench.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E4A5CB816EA2DDA00A41E1A /* wrench.png */; };
+		5E4A5CC016EE1BC400A41E1A /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4A5CBF16EE1BC400A41E1A /* SettingsViewController.m */; };
 		5EA6409416EA0554006EBFE8 /* StringInputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA6409316EA0554006EBFE8 /* StringInputTableViewCell.m */; };
 		5EA7EDA716E39F9300FC4CEA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA7EDA616E39F9300FC4CEA /* UIKit.framework */; };
 		5EA7EDA916E39F9300FC4CEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA7EDA816E39F9300FC4CEA /* Foundation.framework */; };
@@ -26,7 +27,6 @@
 		5EA7EDD516E39F9300FC4CEA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EA7EDD316E39F9300FC4CEA /* InfoPlist.strings */; };
 		5EA7EDD816E39F9300FC4CEA /* WHU_MobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7EDD716E39F9300FC4CEA /* WHU_MobileTests.m */; };
 		5EA7EDE216E3A04A00FC4CEA /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EA7EDE116E3A04A00FC4CEA /* MainStoryboard.storyboard */; };
-		5EA7EDE916E3A0CB00FC4CEA /* settingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7EDE816E3A0CB00FC4CEA /* settingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +44,8 @@
 		5E48468616E63A34002D8F96 /* WHUWLAN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WHUWLAN.h; path = Model/WHUWLAN.h; sourceTree = "<group>"; };
 		5E48468716E63A34002D8F96 /* WHUWLAN.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WHUWLAN.m; path = Model/WHUWLAN.m; sourceTree = "<group>"; };
 		5E4A5CB816EA2DDA00A41E1A /* wrench.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wrench.png; sourceTree = "<group>"; };
+		5E4A5CBE16EE1BC400A41E1A /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = ViewController/SettingsViewController.h; sourceTree = "<group>"; };
+		5E4A5CBF16EE1BC400A41E1A /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = ViewController/SettingsViewController.m; sourceTree = "<group>"; };
 		5EA6409216EA0554006EBFE8 /* StringInputTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringInputTableViewCell.h; sourceTree = "<group>"; };
 		5EA6409316EA0554006EBFE8 /* StringInputTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringInputTableViewCell.m; sourceTree = "<group>"; };
 		5EA7EDA216E39F9300FC4CEA /* WHU Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WHU Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,8 +69,6 @@
 		5EA7EDD616E39F9300FC4CEA /* WHU_MobileTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WHU_MobileTests.h; sourceTree = "<group>"; };
 		5EA7EDD716E39F9300FC4CEA /* WHU_MobileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHU_MobileTests.m; sourceTree = "<group>"; };
 		5EA7EDE116E3A04A00FC4CEA /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
-		5EA7EDE716E3A0CB00FC4CEA /* settingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = settingsViewController.h; sourceTree = "<group>"; };
-		5EA7EDE816E3A0CB00FC4CEA /* settingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = settingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,8 +188,8 @@
 			children = (
 				5EA7EDC116E39F9300FC4CEA /* WMViewController.h */,
 				5EA7EDC216E39F9300FC4CEA /* WMViewController.m */,
-				5EA7EDE716E3A0CB00FC4CEA /* settingsViewController.h */,
-				5EA7EDE816E3A0CB00FC4CEA /* settingsViewController.m */,
+				5E4A5CBE16EE1BC400A41E1A /* SettingsViewController.h */,
+				5E4A5CBF16EE1BC400A41E1A /* SettingsViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -240,7 +240,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = WM;
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "黄 嘉恒";
 			};
 			buildConfigurationList = 5EA7ED9C16E39F9300FC4CEA /* Build configuration list for PBXProject "WHU Mobile" */;
@@ -309,9 +309,9 @@
 				5EA7EDB316E39F9300FC4CEA /* main.m in Sources */,
 				5EA7EDB716E39F9300FC4CEA /* WMAppDelegate.m in Sources */,
 				5EA7EDC316E39F9300FC4CEA /* WMViewController.m in Sources */,
-				5EA7EDE916E3A0CB00FC4CEA /* settingsViewController.m in Sources */,
 				5E48468816E63A34002D8F96 /* WHUWLAN.m in Sources */,
 				5EA6409416EA0554006EBFE8 /* StringInputTableViewCell.m in Sources */,
+				5E4A5CC016EE1BC400A41E1A /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,9 +376,9 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos6.1;
+				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
@@ -399,11 +399,11 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos6.1;
+				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

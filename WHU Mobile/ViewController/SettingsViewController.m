@@ -6,17 +6,17 @@
 //  Copyright (c) 2013 黄 嘉恒. All rights reserved.
 //
 
-#import "settingsViewController.h"
+#import "SettingsViewController.h"
 #import "StringInputTableViewCell.h"
 
-@interface settingsViewController ()<UITableViewDataSource,StringInputTableViewCellDelegate,UITableViewDelegate>
+@interface SettingsViewController ()<UITableViewDataSource,StringInputTableViewCellDelegate,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
 @property (nonatomic,strong)NSString *username;
 @property (nonatomic,strong)NSString *password;
 
 @end
 
-@implementation settingsViewController
+@implementation SettingsViewController
 
 - (void)tableViewCell:(StringInputTableViewCell *)cell didEndEditingWithString:(NSString *)value
 {
@@ -29,7 +29,7 @@
                                                                                                     inSection:0]]).stringValue = @"";
         }
     }
-        else if (cell.tag == 200)
+    else if (cell.tag == 200)
         self.password = value;
 }
 
@@ -100,7 +100,7 @@
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
             cell.textLabel.text = @"Ziqiang.net";
         }
-
+        
     }
     return cell;
 }

@@ -24,20 +24,8 @@
 		5EA7EDBB16E39F9300FC4CEA /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EA7EDBA16E39F9300FC4CEA /* Default@2x.png */; };
 		5EA7EDBD16E39F9300FC4CEA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EA7EDBC16E39F9300FC4CEA /* Default-568h@2x.png */; };
 		5EA7EDC316E39F9300FC4CEA /* WMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7EDC216E39F9300FC4CEA /* WMViewController.m */; };
-		5EA7EDCC16E39F9300FC4CEA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA7EDA616E39F9300FC4CEA /* UIKit.framework */; };
-		5EA7EDCD16E39F9300FC4CEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA7EDA816E39F9300FC4CEA /* Foundation.framework */; };
 		5EA7EDE216E3A04A00FC4CEA /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EA7EDE116E3A04A00FC4CEA /* MainStoryboard.storyboard */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		5EA7EDCE16E39F9300FC4CEA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5EA7ED9916E39F9300FC4CEA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5EA7EDA116E39F9300FC4CEA;
-			remoteInfo = "WHU Mobile";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5E34A14516F21A2100BDB6F3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -66,7 +54,6 @@
 		5EA7EDBC16E39F9300FC4CEA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		5EA7EDC116E39F9300FC4CEA /* WMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WMViewController.h; sourceTree = "<group>"; };
 		5EA7EDC216E39F9300FC4CEA /* WMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WMViewController.m; sourceTree = "<group>"; };
-		5EA7EDC916E39F9300FC4CEA /* WHU MobileTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WHU MobileTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EA7EDE116E3A04A00FC4CEA /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,15 +67,6 @@
 				5EA7EDA716E39F9300FC4CEA /* UIKit.framework in Frameworks */,
 				5EA7EDA916E39F9300FC4CEA /* Foundation.framework in Frameworks */,
 				5EA7EDAB16E39F9300FC4CEA /* CoreGraphics.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5EA7EDC516E39F9300FC4CEA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5EA7EDCC16E39F9300FC4CEA /* UIKit.framework in Frameworks */,
-				5EA7EDCD16E39F9300FC4CEA /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,7 +112,6 @@
 			isa = PBXGroup;
 			children = (
 				5EA7EDA216E39F9300FC4CEA /* WHU Mobile.app */,
-				5EA7EDC916E39F9300FC4CEA /* WHU MobileTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -221,25 +198,6 @@
 			productReference = 5EA7EDA216E39F9300FC4CEA /* WHU Mobile.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5EA7EDC816E39F9300FC4CEA /* WHU MobileTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5EA7EDDE16E39F9300FC4CEA /* Build configuration list for PBXNativeTarget "WHU MobileTests" */;
-			buildPhases = (
-				5EA7EDC416E39F9300FC4CEA /* Sources */,
-				5EA7EDC516E39F9300FC4CEA /* Frameworks */,
-				5EA7EDC616E39F9300FC4CEA /* Resources */,
-				5EA7EDC716E39F9300FC4CEA /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5EA7EDCF16E39F9300FC4CEA /* PBXTargetDependency */,
-			);
-			name = "WHU MobileTests";
-			productName = "WHU MobileTests";
-			productReference = 5EA7EDC916E39F9300FC4CEA /* WHU MobileTests.octest */;
-			productType = "com.apple.product-type.bundle";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -263,7 +221,6 @@
 			projectRoot = "";
 			targets = (
 				5EA7EDA116E39F9300FC4CEA /* WHU Mobile */,
-				5EA7EDC816E39F9300FC4CEA /* WHU MobileTests */,
 			);
 		};
 /* End PBXProject section */
@@ -282,30 +239,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5EA7EDC616E39F9300FC4CEA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		5EA7EDC716E39F9300FC4CEA /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5EA7ED9E16E39F9300FC4CEA /* Sources */ = {
@@ -322,22 +256,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5EA7EDC416E39F9300FC4CEA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		5EA7EDCF16E39F9300FC4CEA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5EA7EDA116E39F9300FC4CEA /* WHU Mobile */;
-			targetProxy = 5EA7EDCE16E39F9300FC4CEA /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5EA7EDAF16E39F9300FC4CEA /* InfoPlist.strings */ = {
@@ -432,40 +351,6 @@
 			};
 			name = Release;
 		};
-		5EA7EDDF16E39F9300FC4CEA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WHU Mobile.app/WHU Mobile";
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WHU Mobile/WHU Mobile-Prefix.pch";
-				INFOPLIST_FILE = "WHU MobileTests/WHU MobileTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		5EA7EDE016E39F9300FC4CEA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WHU Mobile.app/WHU Mobile";
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WHU Mobile/WHU Mobile-Prefix.pch";
-				INFOPLIST_FILE = "WHU MobileTests/WHU MobileTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -483,15 +368,6 @@
 			buildConfigurations = (
 				5EA7EDDC16E39F9300FC4CEA /* Debug */,
 				5EA7EDDD16E39F9300FC4CEA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5EA7EDDE16E39F9300FC4CEA /* Build configuration list for PBXNativeTarget "WHU MobileTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5EA7EDDF16E39F9300FC4CEA /* Debug */,
-				5EA7EDE016E39F9300FC4CEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

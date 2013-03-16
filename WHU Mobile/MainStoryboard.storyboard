@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
-        <deployment defaultVersion="1552" identifier="iOS"/>
         <development version="4500" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -14,11 +13,8 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ypk-9H-M7w">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="190" id="5ys-XI-QXg"/>
-                                    <constraint firstAttribute="width" constant="198" id="a2y-5i-IVP"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ypk-9H-M7w">
+                                <rect key="frame" x="61" y="54" width="198" height="191"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="登录">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -31,28 +27,20 @@
                                     <action selector="login:" destination="2" eventType="touchUpInside" id="Fxd-8s-9lI"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="WHU-Wifi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNs-h1-fXF">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="39" id="glT-qC-kUq"/>
-                                </constraints>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="WHU-Wifi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mNs-h1-fXF">
+                                <rect key="frame" x="20" y="252" width="280" height="39"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Connection result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psj-GK-HxH">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="278" id="Ihr-6d-3Ho"/>
-                                    <constraint firstAttribute="height" constant="27" id="Qqj-fS-wFY"/>
-                                </constraints>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Connection result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="psj-GK-HxH">
+                                <rect key="frame" x="21" y="326" width="278" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZIw-yo-3f3">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="32" id="iey-gh-klZ"/>
-                                    <constraint firstAttribute="height" constant="32" id="xxJ-EE-K5n"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZIw-yo-3f3">
+                                <rect key="frame" x="268" y="408" width="32" height="32"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Button" image="wrench.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -66,17 +54,6 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="mNs-h1-fXF" firstAttribute="top" secondItem="ypk-9H-M7w" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="2mW-aW-Qkc"/>
-                            <constraint firstAttribute="bottom" secondItem="psj-GK-HxH" secondAttribute="bottom" constant="107" id="GKH-Gr-kUA"/>
-                            <constraint firstItem="ypk-9H-M7w" firstAttribute="centerX" secondItem="mNs-h1-fXF" secondAttribute="centerX" type="default" id="GYo-Qu-Exx"/>
-                            <constraint firstItem="ypk-9H-M7w" firstAttribute="top" secondItem="3" secondAttribute="top" constant="54" id="NWl-VZ-thf"/>
-                            <constraint firstAttribute="bottom" secondItem="ZIw-yo-3f3" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Ult-av-QLJ"/>
-                            <constraint firstAttribute="trailing" secondItem="ZIw-yo-3f3" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="XS6-Nw-iCW"/>
-                            <constraint firstItem="psj-GK-HxH" firstAttribute="centerX" secondItem="mNs-h1-fXF" secondAttribute="centerX" type="default" id="ZTl-HF-5sB"/>
-                            <constraint firstAttribute="trailing" secondItem="mNs-h1-fXF" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="hSF-D2-n9W"/>
-                            <constraint firstItem="mNs-h1-fXF" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="liu-xj-lRQ"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="ypk-9H-M7w" id="QrS-cR-zHQ"/>
@@ -95,7 +72,8 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aWy-zl-Cb2">
+                            <navigationBar contentMode="scaleToFill" id="aWy-zl-Cb2">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
                                     <navigationItem title="设置" id="Cfl-MV-GPr">
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="xcr-M4-8lD">
@@ -106,7 +84,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="HG0-eQ-xj5">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="HG0-eQ-xj5">
+                                <rect key="frame" x="0.0" y="44" width="320" height="416"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -118,15 +97,6 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <gestureRecognizers/>
-                        <constraints>
-                            <constraint firstItem="aWy-zl-Cb2" firstAttribute="trailing" secondItem="kAx-3N-HFX" secondAttribute="trailing" type="default" id="570-hy-bB8"/>
-                            <constraint firstItem="HG0-eQ-xj5" firstAttribute="top" secondItem="aWy-zl-Cb2" secondAttribute="bottom" type="default" id="CCr-tt-hcz"/>
-                            <constraint firstItem="HG0-eQ-xj5" firstAttribute="leading" secondItem="kAx-3N-HFX" secondAttribute="leading" type="default" id="HIX-9W-1Ty"/>
-                            <constraint firstItem="HG0-eQ-xj5" firstAttribute="trailing" secondItem="kAx-3N-HFX" secondAttribute="trailing" type="default" id="WRD-IV-wXf"/>
-                            <constraint firstItem="aWy-zl-Cb2" firstAttribute="leading" secondItem="kAx-3N-HFX" secondAttribute="leading" type="default" id="eFE-41-wsb"/>
-                            <constraint firstItem="aWy-zl-Cb2" firstAttribute="top" secondItem="kAx-3N-HFX" secondAttribute="top" type="default" id="h7E-Ca-WZy"/>
-                            <constraint firstItem="HG0-eQ-xj5" firstAttribute="bottom" secondItem="kAx-3N-HFX" secondAttribute="bottom" type="default" id="waQ-1i-tBi"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="myTableView" destination="HG0-eQ-xj5" id="cb0-j9-AWu"/>
@@ -139,27 +109,23 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1631" y="337"/>
+            <point key="canvasLocation" x="-1567" y="337"/>
         </scene>
     </scenes>
     <resources>
         <image name="wrench.png" width="64" height="64"/>
     </resources>
     <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
         <class className="SettingsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
             <relationships>
-                <relationship kind="action" name="closeSettingView:"/>
-                <relationship kind="action" name="finishEditing:" candidateClass="UITapGestureRecognizer"/>
                 <relationship kind="outlet" name="myTableView" candidateClass="UITableView"/>
             </relationships>
         </class>
         <class className="WMViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WMViewController.h"/>
             <relationships>
+                <relationship kind="action" name="login:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="resultLabel" candidateClass="UILabel"/>
             </relationships>

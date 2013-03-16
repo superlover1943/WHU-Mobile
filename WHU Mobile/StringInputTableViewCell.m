@@ -90,14 +90,21 @@
 
 - (void)layoutSubviews {
 	[super layoutSubviews];
+    float version = [[[UIDevice currentDevice] systemVersion] floatValue];
 	CGRect editFrame = CGRectInset(self.contentView.frame, 10, 10);
 	if (self.textLabel.text && [self.textLabel.text length] != 0) {
 		CGSize textSize = [self.textLabel sizeThatFits:CGSizeZero];
 		editFrame.origin.x += textSize.width + 10;
 		editFrame.size.width -= textSize.width + 10;
-		self.textField.textAlignment = NSTextAlignmentLeft;
+        if (version < 6.0)
+            self.textField.textAlignment = UITextAlignmentLeft;
+        else
+            self.textField.textAlignment = NSTextAlignmentLeft;
 	} else {
-		self.textField.textAlignment = NSTextAlignmentLeft;
+        if (version < 6.0)
+            self.textField.textAlignment = UITextAlignmentLeft;
+        else
+            self.textField.textAlignment = NSTextAlignmentLeft;
 	}
 	self.textField.frame = editFrame;
 }

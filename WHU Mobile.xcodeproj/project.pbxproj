@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		5E34A14616F21A2100BDB6F3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E34A14516F21A2100BDB6F3 /* Security.framework */; };
-		5E34A18616F21F6100BDB6F3 /* STKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E34A17316F21F6100BDB6F3 /* STKeychain.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5E48467016E4AE39002D8F96 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E48466F16E4AE39002D8F96 /* SystemConfiguration.framework */; };
 		5E48468816E63A34002D8F96 /* WHUWLAN.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E48468716E63A34002D8F96 /* WHUWLAN.m */; };
 		5E4A5CB916EA2DDA00A41E1A /* wrench.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E4A5CB816EA2DDA00A41E1A /* wrench.png */; };
 		5E4A5CC016EE1BC400A41E1A /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4A5CBF16EE1BC400A41E1A /* SettingsViewController.m */; };
+		5E806D7C16F42F030055A0FA /* STKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E806D7B16F42F030055A0FA /* STKeychain.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5EA6409416EA0554006EBFE8 /* StringInputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA6409316EA0554006EBFE8 /* StringInputTableViewCell.m */; };
 		5EA7EDA716E39F9300FC4CEA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA7EDA616E39F9300FC4CEA /* UIKit.framework */; };
 		5EA7EDA916E39F9300FC4CEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA7EDA816E39F9300FC4CEA /* Foundation.framework */; };
@@ -29,14 +29,14 @@
 
 /* Begin PBXFileReference section */
 		5E34A14516F21A2100BDB6F3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		5E34A17216F21F6100BDB6F3 /* STKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKeychain.h; sourceTree = "<group>"; };
-		5E34A17316F21F6100BDB6F3 /* STKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKeychain.m; sourceTree = "<group>"; };
 		5E48466F16E4AE39002D8F96 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5E48468616E63A34002D8F96 /* WHUWLAN.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WHUWLAN.h; path = Model/WHUWLAN.h; sourceTree = "<group>"; };
 		5E48468716E63A34002D8F96 /* WHUWLAN.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WHUWLAN.m; path = Model/WHUWLAN.m; sourceTree = "<group>"; };
 		5E4A5CB816EA2DDA00A41E1A /* wrench.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wrench.png; sourceTree = "<group>"; };
 		5E4A5CBE16EE1BC400A41E1A /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = ViewController/SettingsViewController.h; sourceTree = "<group>"; };
 		5E4A5CBF16EE1BC400A41E1A /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = ViewController/SettingsViewController.m; sourceTree = "<group>"; };
+		5E806D7A16F42F030055A0FA /* STKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKeychain.h; sourceTree = "<group>"; };
+		5E806D7B16F42F030055A0FA /* STKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKeychain.m; sourceTree = "<group>"; };
 		5EA6409216EA0554006EBFE8 /* StringInputTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringInputTableViewCell.h; sourceTree = "<group>"; };
 		5EA6409316EA0554006EBFE8 /* StringInputTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringInputTableViewCell.m; sourceTree = "<group>"; };
 		5EA7EDA216E39F9300FC4CEA /* WHU Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WHU Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,23 +73,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5E34A14B16F21F6100BDB6F3 /* STUtils */ = {
-			isa = PBXGroup;
-			children = (
-				5E34A17116F21F6100BDB6F3 /* Security */,
-			);
-			path = STUtils;
-			sourceTree = "<group>";
-		};
-		5E34A17116F21F6100BDB6F3 /* Security */ = {
-			isa = PBXGroup;
-			children = (
-				5E34A17216F21F6100BDB6F3 /* STKeychain.h */,
-				5E34A17316F21F6100BDB6F3 /* STKeychain.m */,
-			);
-			path = Security;
-			sourceTree = "<group>";
-		};
 		5E4A5CC116EE1D1C00A41E1A /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +81,15 @@
 			);
 			name = View;
 			sourceTree = "<group>";
+		};
+		5E806D7916F42F030055A0FA /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				5E806D7A16F42F030055A0FA /* STKeychain.h */,
+				5E806D7B16F42F030055A0FA /* STKeychain.m */,
+			);
+			path = Security;
+			sourceTree = SOURCE_ROOT;
 		};
 		5EA7ED9716E39F9300FC4CEA = {
 			isa = PBXGroup;
@@ -143,7 +135,7 @@
 		5EA7EDAD16E39F9300FC4CEA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5E34A14B16F21F6100BDB6F3 /* STUtils */,
+				5E806D7916F42F030055A0FA /* Security */,
 				5E4A5CB816EA2DDA00A41E1A /* wrench.png */,
 				5EA7EDB516E39F9300FC4CEA /* WMAppDelegate.h */,
 				5EA7EDB616E39F9300FC4CEA /* WMAppDelegate.m */,
@@ -252,7 +244,7 @@
 				5E48468816E63A34002D8F96 /* WHUWLAN.m in Sources */,
 				5EA6409416EA0554006EBFE8 /* StringInputTableViewCell.m in Sources */,
 				5E4A5CC016EE1BC400A41E1A /* SettingsViewController.m in Sources */,
-				5E34A18616F21F6100BDB6F3 /* STKeychain.m in Sources */,
+				5E806D7C16F42F030055A0FA /* STKeychain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +324,10 @@
 				GCC_PREFIX_HEADER = "WHU Mobile/WHU Mobile-Prefix.pch";
 				INFOPLIST_FILE = "WHU Mobile/WHU Mobile-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -345,6 +341,10 @@
 				GCC_PREFIX_HEADER = "WHU Mobile/WHU Mobile-Prefix.pch";
 				INFOPLIST_FILE = "WHU Mobile/WHU Mobile-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;

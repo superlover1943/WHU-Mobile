@@ -7,6 +7,7 @@
 //
 
 #import "WMAppDelegate.h"
+#import "WHUWLAN.h"
 
 @implementation WMAppDelegate
 

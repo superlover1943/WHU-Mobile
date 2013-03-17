@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WHUWLAN.h"
+
+@class WHUWLAN;
 
 @interface WMAppDelegate : UIResponder <UIApplicationDelegate>
 

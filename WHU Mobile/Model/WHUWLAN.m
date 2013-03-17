@@ -35,7 +35,8 @@
         [self checkWhetherLogged];
     }
     else
-        [self.delegate handleWLANLoginResponse:@"用户名或密码为空"];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"wlanLoginResponce"
+                                                            object:@"用户名或密码为空"];
 }
 
 - (void)login
@@ -51,7 +52,8 @@
     request.HTTPBody = [POSTBody dataUsingEncoding:NSUTF8StringEncoding];
     self.loginConnection = [[NSURLConnection alloc] initWithRequest:request
                                                            delegate:self];
-    [self.delegate handleWLANLoginResponse:@"正在登录"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"wlanLoginResponce"
+                                                        object:@"正在登录"];
 }
 
 - (void)checkWhetherLogged
@@ -63,9 +65,12 @@
                                              timeoutInterval:60];
         self.checkWhetherLoggedConnection = [[NSURLConnection alloc] initWithRequest:request
                                                                         delegate:self];
-        [self.delegate handleWLANLoginResponse:@"正在检测是否已登录"];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"wlanLoginResponce"
+                                                            object:@"正在检测是否已登录"];
+
     }else{
-        [self.delegate handleWLANLoginResponse:@"未连接至WHU-WLAN"];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"wlanLoginResponce"
+                                                            object:@"未连接至WHU-WLAN"];
     }
 }
 
@@ -89,7 +94,9 @@
                                              cachePolicy:NSURLRequestUseProtocolCachePolicy
                                          timeoutInterval:60];
     self.logoffConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    [self.delegate handleWLANLoginResponse:@"正在登出"];
+    //?
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"wlanLoginResponce"
+                                                        object:@"正在登出"];
 }
 
 - (void)connection:(NSURLConnection *)connection
@@ -107,25 +114,34 @@
         NSRange conflictRange = [htmlContent rangeOfString:@"帐号已在线"];
         NSRange outOfService = [htmlContent rangeOfString:@"包天暂停"];
         if (successRange.location != NSNotFound)
-            [self.delegate handleWLANLoginResponse:@"连接成功"];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"wlanLoginResponce"
+                                                                object:@"连接成功"];
         else if (wrongPasswordRange.location != NSNotFound)
-            [self.delegate handleWLANLoginResponse:@"密码错误"];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"wlanLoginResponce"
+                                                                object:@"密码错误"];
         else if (invalidUsernameRange.location != NSNotFound)
-            [self.delegate handleWLANLoginResponse:@"用户名不存在"];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"wlanLoginResponce"
+                                                                object:@"用户名不存在"];
         else if (busyRange.location != NSNotFound)
-            [self.delegate handleWLANLoginResponse:@"系统繁忙"];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"wlanLoginResponce"
+                                                                object:@"系统繁忙"];
         else if (wifiConflictRange.location != NSNotFound)
-            [self.delegate handleWLANLoginResponse:@"同名用户已连接WLAN"];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"wlanLoginResponce"
+                                                                object:@"同名用户已连接WLAN"];
         else if (conflictRange.location != NSNotFound)
-            [self.delegate handleWLANLoginResponse:@"同名用户已连接校园网"];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"wlanLoginResponce"
+                                                                object:@"同名用户已连接校园网"];
         else if (outOfService.location != NSNotFound)
-            [self.delegate handleWLANLoginResponse:@"用户已停止校园网包天"];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"wlanLoginResponce"
+                                                                object:@"用户已停止校园网包天"];
         else
-            [self.delegate handleWLANLoginResponse:@"连接失败"];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"wlanLoginResponce"
+                                                                object:@"连接失败"];
     }
     else if (connection == self.logoffConnection)
     {
-        [self.delegate handleWLANLoginResponse:@"已登出"];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"wlanLoginResponce"
+                                                            object:@"已登出"];
         self.logoffConnection = nil;
     }
     else if (connection == self.getCookieConnection)
@@ -144,16 +160,17 @@
                 [self loadCookie];
             }
             else
-                [self.delegate handleWLANLoginResponse:@"未连接"];
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"wlanLoginResponce"
+                                                                    object:@"未连接"];
             else
-            {
-                [self.delegate handleWLANLoginResponse:@"已连接"];
-            }
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"wlanLoginResponce"
+                                                                    object:@"已连接"];
     }
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-    [self.delegate handleWLANLoginError:error];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"wlanLoginError"
+                                                        object:error];
 }
 /*
  登陆时可能的返回值：
@@ -242,15 +259,6 @@
     else
         currentSSID=@"";
     return CFBridgingRelease(currentSSID);
-}
-
-- (id)initWithDelegate:(id)delegate
-{
-    self = [super init];
-    if (self) {
-        self.delegate = delegate;
-    }
-    return self;
 }
 
 - (void)cancelAllConnectionWithoutConnection:(NSURLConnection *)connection

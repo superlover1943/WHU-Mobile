@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol WHUWLANDelegate <NSObject>
-
-- (void)handleWLANLoginResponse:(NSString *)response;
 /*
- 可能的返回值：
+ 注册到NSNotificationCenter
+ 处理登陆返回值: @"wlanLoginResponce" 传入NSString
+ 处理登陆错误: @“@"wlanLoginError" 传入NSError (参考 NSURLErrorDomain 文档)
+ */
+/*
+ @"wlanLoginResponce"可能的返回值：
  正在登录
  正在检测是否已登录
  未连接至WHU-WLAN
@@ -30,22 +32,12 @@
  已连接
  */
 
-- (void)handleWLANLoginError:(NSError *)error;
-//参考 NSURLErrorDomain 文档
-
-@end
-
 @interface WHUWLAN : NSObject <NSURLConnectionDelegate,NSURLConnectionDataDelegate>
-@property (nonatomic)id<WHUWLANDelegate> delegate;
 
 - (void)loginUsingUsername:(NSString *)username
                andPassword:(NSString *)password;
 - (void)logOff;
 - (void)checkWhetherLogged;
-
-//Designed initializer.
-- (id)initWithDelegate:(id)delegate;
-
 
 @end
 

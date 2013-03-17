@@ -11,7 +11,7 @@
 /*
  注册到NSNotificationCenter
  处理登陆返回值: @"wlanLoginResponce" 传入NSString
- 处理登陆错误: @“@"wlanLoginError" 传入NSError (参考 NSURLErrorDomain 文档)
+ 处理登陆错误: @"wlanLoginError" 传入NSError (参考 NSURLErrorDomain 文档)
  */
 /*
  @"wlanLoginResponce"可能的返回值：

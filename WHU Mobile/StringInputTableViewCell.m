@@ -90,7 +90,7 @@
 
 - (void)layoutSubviews {
 	[super layoutSubviews];
-    float version = [[[UIDevice currentDevice] systemVersion] floatValue];
+    float version = [[[UIDevice currentDevice] systemVersion] floatValue];//潜在的兼容性问题
 	CGRect editFrame = CGRectInset(self.contentView.frame, 10, 10);
 	if (self.textLabel.text && [self.textLabel.text length] != 0) {
 		CGSize textSize = [self.textLabel sizeThatFits:CGSizeZero];
@@ -98,14 +98,9 @@
 		editFrame.size.width -= textSize.width + 10;
         if (version < 6.0)
             self.textField.textAlignment = UITextAlignmentLeft;
-        else
-            self.textField.textAlignment = NSTextAlignmentLeft;
-	} else {
+	} else
         if (version < 6.0)
             self.textField.textAlignment = UITextAlignmentLeft;
-        else
-            self.textField.textAlignment = NSTextAlignmentLeft;
-	}
 	self.textField.frame = editFrame;
 }
 

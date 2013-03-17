@@ -263,7 +263,19 @@
 
 - (void)cancelAllConnectionWithoutConnection:(NSURLConnection *)connection
 {
-    NSArray *connectionArray = @[self.loginConnection,self.logoffConnection,self.checkWhetherLoggedConnection,self.getCookieConnection];
+    NSMutableArray *connectionArray = [[NSMutableArray alloc] init];
+    if (self.loginConnection) {
+        [connectionArray addObject:self.loginConnection];
+    }
+    if (self.logoffConnection) {
+        [connectionArray addObject:self.loginConnection];
+    }
+    if (self.checkWhetherLoggedConnection) {
+        [connectionArray addObject:self.loginConnection];
+    }
+    if (self.getCookieConnection) {
+        [connectionArray addObject:self.loginConnection];
+    }
     for (NSURLConnection *aConnection in connectionArray)
     {
         if (aConnection != connection) {

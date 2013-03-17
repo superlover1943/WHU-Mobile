@@ -18,7 +18,6 @@
 @property (nonatomic,strong)NSURLConnection *getCookieConnection;
 @property (nonatomic,strong)NSURLConnection *checkWhetherLoggedConnection;
 @property (nonatomic)BOOL checkThenLogin;
-@property (nonatomic,strong)NSOperationQueue *connectionQueue;
 @property (nonatomic,strong)NSString *username;
 @property (nonatomic,strong)NSString *password;
 @end
@@ -32,7 +31,7 @@
         self.username = username;
         self.password = password;
         self.checkThenLogin = YES;
-        [self.connectionQueue cancelAllOperations];
+        [self cancelAllConnectionWithoutConnection:nil];
         [self checkWhetherLogged];
     }
     else
@@ -51,10 +50,7 @@
     self.password = nil;
     request.HTTPBody = [POSTBody dataUsingEncoding:NSUTF8StringEncoding];
     self.loginConnection = [[NSURLConnection alloc] initWithRequest:request
-                                                           delegate:self
-                                                   startImmediately:NO];
-    [self.loginConnection setDelegateQueue:self.connectionQueue];
-    [self.loginConnection start];
+                                                           delegate:self];
     [self.delegate handleWLANLoginResponse:@"正在登录"];
 }
 
@@ -66,10 +62,7 @@
                                                  cachePolicy:NSURLRequestUseProtocolCachePolicy
                                              timeoutInterval:60];
         self.checkWhetherLoggedConnection = [[NSURLConnection alloc] initWithRequest:request
-                                                                        delegate:self
-                                                                startImmediately:NO];
-        [self.checkWhetherLoggedConnection setDelegateQueue:self.connectionQueue];
-        [self.checkWhetherLoggedConnection start];
+                                                                        delegate:self];
         [self.delegate handleWLANLoginResponse:@"正在检测是否已登录"];
     }else{
         [self.delegate handleWLANLoginResponse:@"未连接至WHU-WLAN"];
@@ -84,14 +77,13 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:myURL
                                              cachePolicy:NSURLRequestUseProtocolCachePolicy
                                          timeoutInterval:60];
-    self.getCookieConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:NO];
-    [self.getCookieConnection setDelegateQueue:self.connectionQueue];
-    [self.getCookieConnection start];
+    self.getCookieConnection = [[NSURLConnection alloc] initWithRequest:request
+                                                               delegate:self];
 }
 
 - (void)logOff
 {
-    [self.connectionQueue cancelAllOperations];
+    [self cancelAllConnectionWithoutConnection:self.logoffConnection];
     NSURL *myURL = [NSURL URLWithString:@"http://wlan.whu.edu.cn/portal/logOff"];
     NSURLRequest *request = [NSURLRequest requestWithURL:myURL
                                              cachePolicy:NSURLRequestUseProtocolCachePolicy
@@ -261,13 +253,15 @@
     return self;
 }
 
-- (NSOperationQueue *)connectionQueue
+- (void)cancelAllConnectionWithoutConnection:(NSURLConnection *)connection
 {
-    if (!_connectionQueue) {
-        _connectionQueue = [[NSOperationQueue alloc] init];
-        _connectionQueue.maxConcurrentOperationCount = 1;
+    NSArray *connectionArray = @[self.loginConnection,self.logoffConnection,self.checkWhetherLoggedConnection,self.getCookieConnection];
+    for (NSURLConnection *aConnection in connectionArray)
+    {
+        if (aConnection != connection) {
+            [aConnection cancel];
+        }
     }
-    return _connectionQueue;
 }
 
 @end

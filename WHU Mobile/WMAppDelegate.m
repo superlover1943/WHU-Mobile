@@ -13,6 +13,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    self.whuWlan = [[WHUWLAN alloc] init];
     //监听cookie保存策略变化
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(receivedNSHTTPCookieStorageAcceptPolicyChangedNotification)

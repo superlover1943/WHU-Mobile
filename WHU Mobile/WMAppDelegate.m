@@ -7,11 +7,29 @@
 //
 
 #import "WMAppDelegate.h"
+#import "SinaWeibo.h"
+#import "SocialController.h"
+
+@interface WMAppDelegate ()
+
+@property (readwrite, nonatomic) SinaWeibo *sinaweibo;
+
+@end
 
 @implementation WMAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.sinaweibo = [[SinaWeibo alloc] initWithAppKey:kAppKey appSecret:kAppSecret appRedirectURI:kAppRedirectURI andDelegate:self.socialController];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *sinaweiboInfo = [defaults objectForKey:@"SinaWeiboAuthData"];
+    if ([sinaweiboInfo objectForKey:@"AccessTokenKey"] && [sinaweiboInfo objectForKey:@"ExpirationDateKey"] && [sinaweiboInfo objectForKey:@"UserIDKey"])
+    {
+        self.sinaweibo.accessToken = [sinaweiboInfo objectForKey:@"AccessTokenKey"];
+        self.sinaweibo.expirationDate = [sinaweiboInfo objectForKey:@"ExpirationDateKey"];
+        self.sinaweibo.userID = [sinaweiboInfo objectForKey:@"UserIDKey"];
+    }
+
     // Override point for customization after application launch.
     return YES;
 }
@@ -50,6 +68,14 @@
 - (void)receivedNSHTTPCookieStorageAcceptPolicyChangedNotification
 {
     [NSHTTPCookieStorage sharedHTTPCookieStorage].cookieAcceptPolicy = NSHTTPCookieAcceptPolicyAlways;
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation
+{
+    return [self.sinaweibo handleOpenURL:url];
 }
 
 @end

@@ -13,6 +13,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    //监听cookie保存策略变化
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receivedNSHTTPCookieStorageAcceptPolicyChangedNotification)
+                                                 name:NSHTTPCookieManagerAcceptPolicyChangedNotification
+                                               object:nil];
     return YES;
 }
 							
@@ -33,12 +38,12 @@
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
-//设置cookie保存策略
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [self.whuWlan checkWhetherLogged];//启动后自动检查wlan登陆状态
+    //设置cookie保存策略
     [NSHTTPCookieStorage sharedHTTPCookieStorage].cookieAcceptPolicy = NSHTTPCookieAcceptPolicyAlways;
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedNSHTTPCookieStorageAcceptPolicyChangedNotification) name:NSHTTPCookieManagerAcceptPolicyChangedNotification object:nil];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

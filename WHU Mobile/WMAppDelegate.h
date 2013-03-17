@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WHUWLAN.h"
 
 @interface WMAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) WHUWLAN *whuWlan;
 
 @end
